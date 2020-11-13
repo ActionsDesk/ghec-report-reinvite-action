@@ -1,0 +1,52 @@
+{
+  "name": "ghec-report-reinvite-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to reinvite users to GitHub Enterprise Cloud organizations",
+  "keywords": [],
+  "author": {
+    "name": "GitHub Professional Services",
+    "email": "services@github.com",
+    "url": "https://services.github.com"
+  },
+  "contributors": [
+    {
+      "name": "Stefan Stölzle",
+      "email": "stoe@github.com",
+      "url": "https://github.com/stoe"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/ActionsDesk/ghec-report-reinvite-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ActionsDesk/ghec-report-reinvite-action/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -m",
+    "pretest": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
+    "test": "eslint .",
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@github/prettier-config": "^0.0.4",
+    "@vercel/ncc": "^0.25.1",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-github": "^4.1.1"
+  },
+  "prettier": "@github/prettier-config"
+}
