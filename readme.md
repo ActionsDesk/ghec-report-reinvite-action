@@ -118,12 +118,12 @@ jobs:
 
 ### Action Inputs
 
-| Name          | Description                                           | Default                 | Required |
-| :------------ | :---------------------------------------------------- | :---------------------- | :------- |
-| `token`       | A `admin:org`, `read:user`, `user:email` scoped [PAT] |                         | `true`   |
-| `report-path` | Report CSV file path within the repository            | `invitation-report.csv` | `true`   |
-| `base-sha`    | Report base SHA, needed for                           |                         | `true`   |
-| `head-sha`    | Report head SHA, needed for                           |                         | `true`   |
+| Name          | Description                                                                         | Default                 | Required |
+| :------------ | :---------------------------------------------------------------------------------- | :---------------------- | :------- |
+| `token`       | A `admin:org`, `read:user`, `user:email` scoped [PAT]                               |                         | `true`   |
+| `report-path` | Report CSV file path within the repository                                          | `invitation-report.csv` | `true`   |
+| `base-sha`    | Report base SHA, from https://github.com/ActionsDesk/ghec-invitations-report-action |                         | `true`   |
+| `head-sha`    | Report head SHA, from https://github.com/ActionsDesk/ghec-invitations-report-action |                         | `true`   |
 
 ## License
 
