@@ -10,23 +10,25 @@ github.getOctokit = jest.fn().mockImplementation(() => {
   const patch = buffer.toString('ascii', 0, buffer.length)
 
   return {
-    orgs: {
-      createInvitation: jest.fn().mockReturnValue({})
-    },
-    repos: {
-      compareCommits: jest.fn().mockReturnValue({
-        data: {
-          files: [
-            {
-              filename: 'report.csv',
-              patch
-            }
-          ]
-        }
-      })
-    },
-    users: {
-      getByUsername: jest.fn().mockReturnValue({data: {id: 1}})
+    rest: {
+      orgs: {
+        createInvitation: jest.fn().mockReturnValue({})
+      },
+      repos: {
+        compareCommits: jest.fn().mockReturnValue({
+          data: {
+            files: [
+              {
+                filename: 'report.csv',
+                patch
+              }
+            ]
+          }
+        })
+      },
+      users: {
+        getByUsername: jest.fn().mockReturnValue({data: {id: 1}})
+      }
     }
   }
 })
@@ -124,8 +126,8 @@ describe('reinvite.js', () => {
     const reinvite = new Reivite(octokit, options)
 
     const sendInviteSpy = jest.spyOn(reinvite, 'sendInvite')
-    const getByUsernameSpy = jest.spyOn(octokit.users, 'getByUsername')
-    const createInvitationSpy = jest.spyOn(octokit.orgs, 'createInvitation')
+    const getByUsernameSpy = jest.spyOn(octokit.rest.users, 'getByUsername')
+    const createInvitationSpy = jest.spyOn(octokit.rest.orgs, 'createInvitation')
 
     const {reinvites, failed} = await reinvite.create()
 
@@ -135,11 +137,11 @@ describe('reinvite.js', () => {
     expect(getByUsernameSpy).toHaveBeenCalledTimes(1)
 
     expect(createInvitationSpy).toHaveBeenNthCalledWith(1, {
-      opts: {email: 'octodog@example.com', org: 'demo'},
+      email: 'octodog@example.com',
       org: 'demo'
     })
     expect(createInvitationSpy).toHaveBeenNthCalledWith(2, {
-      opts: {invitee_id: 1, org: 'demo'},
+      invitee_id: 1,
       org: 'demo'
     })
   })

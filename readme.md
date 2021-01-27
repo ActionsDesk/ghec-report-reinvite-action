@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      base-sha: ${{ steps.create-report.outputs.base-sha }}
-      head-sha: ${{ steps.create-report.outputs.head-sha }}
+      base_sha: ${{ steps.create-report.outputs.base_sha }}
+      head_sha: ${{ steps.create-report.outputs.head_sha }}
 
     steps:
       - name: Checkout
@@ -35,13 +35,13 @@ jobs:
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
           enterprise: 'my-enterprise'
-          report-path: 'reports/invitations.csv'
+          report_path: 'reports/invitations.csv'
 
   # reinvite users from the report created in report job above
   reinvite:
     runs-on: ubuntu-latest
     needs: report
-    if: ${{ needs.report.outputs }} && ${{ needs.report.outputs.base-sha }} && ${{ needs.report.outputs.head-sha }}
+    if: ${{ needs.report.outputs }} && ${{ needs.report.outputs.base_sha }} && ${{ needs.report.outputs.head_sha }}
 
     steps:
       - name: Checkout
@@ -51,9 +51,9 @@ jobs:
         uses: ActionsDesk/ghec-report-reinvite-action@v1.0.1
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
-          report-path: 'reports/invitations.csv'
-          base-sha: ${{ needs.report.outputs.base-sha }}
-          head-sha: ${{ needs.report.outputs.head-sha }}
+          report_path: 'reports/invitations.csv'
+          base_sha: ${{ needs.report.outputs.base_sha }}
+          head_sha: ${{ needs.report.outputs.head_sha }}
 ```
 
 <details>
@@ -67,7 +67,7 @@ on:
         description: 'GitHub Enterprise Cloud account, if omitted the report will target the repository organization only'
         required: false
         default: 'my-enterprise'
-      report-path:
+      report_path:
         description: 'Path to the report file'
         default: 'reports/invitations.csv'
         required: false
@@ -80,8 +80,8 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      base-sha: ${{ steps.create-report.outputs.base-sha }}
-      head-sha: ${{ steps.create-report.outputs.head-sha }}
+      base_sha: ${{ steps.create-report.outputs.base_sha }}
+      head_sha: ${{ steps.create-report.outputs.head_sha }}
 
     steps:
       - name: Checkout
@@ -93,13 +93,13 @@ jobs:
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
           enterprise: ${{ github.event.inputs.enterprise }}
-          report-path: ${{ github.event.inputs.report-path }}
+          report_path: ${{ github.event.inputs.report_path }}
 
   # reinvite users from the report created in report job above
   reinvite:
     runs-on: ubuntu-latest
     needs: report
-    if: ${{ needs.report.outputs }} && ${{ needs.report.outputs.base-sha }} && ${{ needs.report.outputs.head-sha }}
+    if: ${{ needs.report.outputs }} && ${{ needs.report.outputs.base_sha }} && ${{ needs.report.outputs.head_sha }}
 
     steps:
       - name: Checkout
@@ -109,9 +109,9 @@ jobs:
         uses: ActionsDesk/ghec-report-reinvite-action@v1.0.1
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
-          report-path: ${{ github.event.inputs.report-path }}
-          base-sha: ${{ needs.report.outputs.base-sha }}
-          head-sha: ${{ needs.report.outputs.head-sha }}
+          report_path: ${{ github.event.inputs.report_path }}
+          base_sha: ${{ needs.report.outputs.base_sha }}
+          head_sha: ${{ needs.report.outputs.head_sha }}
 ```
 
 </details>
@@ -121,9 +121,9 @@ jobs:
 | Name          | Description                                                                         | Default                 | Required |
 | :------------ | :---------------------------------------------------------------------------------- | :---------------------- | :------- |
 | `token`       | A `admin:org`, `read:user`, `user:email` scoped [PAT]                               |                         | `true`   |
-| `report-path` | Report CSV file path within the repository                                          | `invitation-report.csv` | `true`   |
-| `base-sha`    | Report base SHA, from https://github.com/ActionsDesk/ghec-invitations-report-action |                         | `true`   |
-| `head-sha`    | Report head SHA, from https://github.com/ActionsDesk/ghec-invitations-report-action |                         | `true`   |
+| `report_path` | Report CSV file path within the repository                                          | `invitation-report.csv` | `true`   |
+| `base_sha`    | Report base SHA, from https://github.com/ActionsDesk/ghec-invitations-report-action |                         | `true`   |
+| `head_sha`    | Report head SHA, from https://github.com/ActionsDesk/ghec-invitations-report-action |                         | `true`   |
 
 ## License
 
