@@ -2,7 +2,7 @@
 
 > GitHub Action to reinvite users to GitHub Enterprise Cloud organizations after https://github.com/ActionsDesk/ghec-invitations-report-action created a report.
 
-[![Test](https://github.com/ActionsDesk/ghec-report-reinvite-action/workflows/Test/badge.svg)](https://github.com/ActionsDesk/ghec-report-reinvite-action/actions?query=workflow%3ATest) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![test](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/test.yml/badge.svg)](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/test.yml) [![codeql](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/codeql.yml/badge.svg)](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/codeql.yml) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## Usage
 
