@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Reinvite users from report
-        uses: ActionsDesk/ghec-report-reinvite-action@v1
+        uses: ActionsDesk/ghec-report-reinvite-action@v1.0.1
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
           report-path: 'reports/invitations.csv'
@@ -106,7 +106,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Reinvite users from report
-        uses: ActionsDesk/ghec-report-reinvite-action@v1
+        uses: ActionsDesk/ghec-report-reinvite-action@v1.0.1
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
           report-path: ${{ github.event.inputs.report-path }}
