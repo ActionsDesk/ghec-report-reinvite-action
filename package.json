@@ -1,6 +1,6 @@
 {
   "name": "ghec-report-reinvite-action",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "GitHub Action to reinvite users to GitHub Enterprise Cloud organizations",
   "keywords": [],
   "author": {
@@ -27,8 +27,8 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
-    "node": ">=12",
-    "npm": ">=6"
+    "node": ">=14",
+    "npm": ">=7"
   },
   "main": "src/index.js",
   "scripts": {
