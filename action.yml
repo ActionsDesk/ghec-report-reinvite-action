@@ -6,14 +6,14 @@ inputs:
   token:
     description: 'A Personal Access token with admin:org, read:user, user:email scopes'
     required: true
-  report-path:
+  report_path:
     description: 'Path to the report file'
     default: 'invitation-report.csv'
     required: true
-  base-sha:
+  base_sha:
     description: 'Report base SHA'
     required: true
-  head-sha:
+  head_sha:
     description: 'Report head SHA'
     required: true
 

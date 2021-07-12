@@ -1,0 +1,7 @@
+@@ -1,3 +1,3 @@
+ Organization,Username,Email,Invitation creation date,Invitation failed date,Invitation failed reason,Inviter
++demo,,octomouse@example.com,2021-01-26T00:00:00.000Z,,,octocat
++demo,,octokitten@example.com,2021-01-18T23:00:00.000Z,2021-01-26T00:00:00.000Z,Invitation expired. User did not accept this invite for 7 days.,octocat
+-demo,mona,,2021-01-26T00:00:00.000Z,,,octocat
+-demo,,octodog@example.com,2021-01-18T23:00:00.000Z,2021-01-26T00:00:00.000Z,Invitation expired. User did not accept this invite for 7 days.,octocat
++demo,lisa,,2021-01-26T00:00:00.000Z,,,octocat
