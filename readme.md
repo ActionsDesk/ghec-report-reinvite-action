@@ -2,7 +2,7 @@
 
 > GitHub Action to reinvite users to GitHub Enterprise Cloud organizations after https://github.com/ActionsDesk/ghec-invitations-report-action created a report.
 
-[![test](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/test.yml/badge.svg)](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/test.yml) [![codeql](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/codeql.yml/badge.svg)](https://github.com/ActionsDesk/ghec-invitations-report-action/actions/workflows/codeql.yml) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![test](https://github.com/ActionsDesk/ghec-report-reinvite-action/actions/workflows/test.yml/badge.svg)](https://github.com/ActionsDesk/ghec-report-reinvite-action/actions/workflows/test.yml) [![codeql](https://github.com/ActionsDesk/ghec-report-reinvite-action/actions/workflows/codeql.yml/badge.svg)](https://github.com/ActionsDesk/ghec-report-reinvite-action/actions/workflows/codeql.yml) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## Usage
 
@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create invitations report
-        uses: ActionsDesk/ghec-invitations-report-action@v2
+        uses: ActionsDesk/ghec-invitations-report-action@v3.0.0
         id: create-report
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Reinvite users from report
-        uses: ActionsDesk/ghec-report-reinvite-action@v1.0.1
+        uses: ActionsDesk/ghec-report-reinvite-action@v2.0.0
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
           report_path: 'reports/invitations.csv'
@@ -88,7 +88,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create invitations report
-        uses: ActionsDesk/ghec-invitations-report-action@v2
+        uses: ActionsDesk/ghec-invitations-report-action@v3.0.0
         id: create-report
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
@@ -106,7 +106,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Reinvite users from report
-        uses: ActionsDesk/ghec-report-reinvite-action@v1.0.1
+        uses: ActionsDesk/ghec-report-reinvite-action@v2.0.0
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
           report_path: ${{ github.event.inputs.report_path }}
