@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.7.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^5.0.1"
   },
   "devDependencies": {
     "@github/prettier-config": "^0.0.4",
