@@ -11,6 +11,8 @@
   "plugins": ["github", "jest"],
   "extends": ["plugin:github/recommended"],
   "rules": {
-    "camelcase": "off"
+    "camelcase": "off",
+    "filenames/match-regex": "off",
+    "import/no-commonjs": "off"
   }
 }
