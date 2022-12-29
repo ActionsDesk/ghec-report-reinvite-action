@@ -1,26 +1,4 @@
-name: 'action-report-reinvite'
-description: >
-  Reinvite users to GitHub Enterprise Cloud organizations from https://github.com/ActionsDesk/ghec-invitations-report-action
-
-inputs:
-  token:
-    description: 'A Personal Access token with admin:org, read:user, user:email scopes'
-    required: true
-  report_path:
-    description: 'Path to the report file'
-    default: 'invitation-report.csv'
-    required: true
-  base_sha:
-    description: 'Report base SHA'
-    required: true
-  head_sha:
-    description: 'Report head SHA'
-    required: true
-
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
-
-branding:
-  icon: user-plus
-  color: green
+���i�b��z�+��ފ{��^���ب�����z���h+G��'���+
+Z.v��jx�jب���hm��?����ܢo�rب��޲O���>�{⵫b�{>��h�ߚrب�)��-�G�u��*m���=��v����h�����Zvh���+y�n����ޙ����)z�ު�y�k��ަ������׬r���*'=�a��az����_�W�y���ا�+Z�*'�����\��ު�y�k��ڱ�셧^���ب����[jǒ
+ު�y�k��^i�셧^���ب����ay�R
+ު�y�k���ˬ�x'�׵�f��ج���u�c��ڝا�'(����e��(����
