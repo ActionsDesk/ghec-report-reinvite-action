@@ -29,7 +29,7 @@ const run = async () => {
       base,
       head,
       owner,
-      repo
+      repo,
     })
 
     reinvite.create()
