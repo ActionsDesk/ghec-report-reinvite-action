@@ -12,7 +12,7 @@ github.getOctokit = jest.fn().mockImplementation(() => {
   return {
     rest: {
       orgs: {
-        createInvitation: jest.fn().mockReturnValue({})
+        createInvitation: jest.fn().mockReturnValue({}),
       },
       repos: {
         compareCommits: jest.fn().mockReturnValue({
@@ -20,16 +20,16 @@ github.getOctokit = jest.fn().mockImplementation(() => {
             files: [
               {
                 filename: 'report.csv',
-                patch
-              }
-            ]
-          }
-        })
+                patch,
+              },
+            ],
+          },
+        }),
       },
       users: {
-        getByUsername: jest.fn().mockReturnValue({data: {id: 1}})
-      }
-    }
+        getByUsername: jest.fn().mockReturnValue({data: {id: 1}}),
+      },
+    },
   }
 })
 
@@ -45,7 +45,7 @@ describe('reinvite.js', () => {
       base: 'base',
       head: 'head',
       owner: 'owner',
-      repo: 'repo'
+      repo: 'repo',
     }
   })
 
@@ -138,11 +138,11 @@ describe('reinvite.js', () => {
 
     expect(createInvitationSpy).toHaveBeenNthCalledWith(1, {
       email: 'octodog@example.com',
-      org: 'demo'
+      org: 'demo',
     })
     expect(createInvitationSpy).toHaveBeenNthCalledWith(2, {
       invitee_id: 1,
-      org: 'demo'
+      org: 'demo',
     })
   })
 

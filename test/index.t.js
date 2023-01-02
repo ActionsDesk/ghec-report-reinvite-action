@@ -31,7 +31,7 @@ describe('index.js', () => {
 
     context.repo = {
       owner: 'owner',
-      repo: 'repo'
+      repo: 'repo',
     }
 
     const reinvite = new Reinvite()
@@ -55,7 +55,7 @@ describe('index.js', () => {
 
     context.repo = {
       owner: 'owner',
-      repo: 'repo'
+      repo: 'repo',
     }
 
     const setFailedSpy = jest.spyOn(core, 'setFailed').mockReturnValue('')

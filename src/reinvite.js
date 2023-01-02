@@ -78,12 +78,12 @@ class Reinvite {
     try {
       // get the `git diff`
       const {
-        data: {files}
+        data: {files},
       } = await octokit.rest.repos.compareCommits({
         owner,
         repo,
         base,
-        head
+        head,
       })
 
       return files
@@ -108,7 +108,7 @@ class Reinvite {
         } else {
           // get the user id for the username to use for the invitations call
           const {
-            data: {id}
+            data: {id},
           } = await octokit.rest.users.getByUsername({username})
 
           opts.invitee_id = id
