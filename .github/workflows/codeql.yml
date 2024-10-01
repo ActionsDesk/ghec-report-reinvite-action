@@ -1,7 +1,10 @@
 name: CodeQL
 
 on:
+  push:
+    branches: ['main']
   pull_request:
+    branches: ['main']
     paths:
       - '*/*.js'
       - '.github/workflows/codeql.yml'
@@ -15,12 +18,15 @@ jobs:
     permissions:
       actions: read
       contents: read
+      packages: read
       security-events: write
 
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript']
+        include:
+        - language: javascript-typescript
+          build-mode: none
 
     steps:
       - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
@@ -29,7 +35,6 @@ jobs:
         with:
           config-file: ./.github/codeql/codeql-config.yml
           languages: ${{ matrix.language }}
-
-      - uses: github/codeql-action/autobuild@e2b3eafc8d227b0241d48be5f425d47c2d750a13 # v3.26.10
+          build-mode: ${{ matrix.build-mode }}
 
       - uses: github/codeql-action/analyze@e2b3eafc8d227b0241d48be5f425d47c2d750a13 # v3.26.10
