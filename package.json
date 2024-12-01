@@ -50,7 +50,7 @@
     "eslint-plugin-jest": "^28.8.3",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint": "^9.14.0",
+    "eslint": "^9.16.0",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
     "jest": "^29.7.0",
